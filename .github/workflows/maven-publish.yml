@@ -25,6 +25,7 @@ jobs:
     - name: Build with Maven
       run: 
         mvn -B package --file pom.xml
+        mvn install -DskipTests
     - name: Save artifact
       uses: actions/upload-artifact@v2
       with:
