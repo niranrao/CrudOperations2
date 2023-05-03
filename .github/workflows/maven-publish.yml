@@ -23,9 +23,9 @@ jobs:
         distribution: 'adopt'
         cache: maven       
     - name: Build with Maven
-      run: 
-        mkdir artifacts
-        mvn install -DskipTests        
+    - run: mvn -B package --file pom.xml -DskipTests
+    - run: mkdir artifacts && cp target/*.jar artifacts
+    - run: cd artifacts && ls
     - name: Save artifact
       uses: actions/upload-artifact@v2
       with:
