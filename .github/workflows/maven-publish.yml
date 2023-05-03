@@ -25,6 +25,7 @@ jobs:
     - name: Build with Maven
       run: 
         mvn install -DskipTests
+        mkdir artifacts
     - name: Save artifact
       uses: actions/upload-artifact@v2
       with:
